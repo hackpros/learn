@@ -1,0 +1,3 @@
+spring boot is running ...
+${application.formatted-version}
+${spring-boot.formatted-version}
