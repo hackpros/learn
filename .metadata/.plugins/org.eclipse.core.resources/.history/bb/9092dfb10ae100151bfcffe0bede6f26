@@ -1,8 +1,0 @@
-@SpringBootApplication
-@EnableConfigurationProperties({WiselySettings.class,Wisely2Settings.class})
-public class DemoApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
-}
