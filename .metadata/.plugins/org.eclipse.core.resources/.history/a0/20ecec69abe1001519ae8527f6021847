@@ -1,0 +1,45 @@
+/**
+ * 
+ * IUsersService.java
+ * Copyright(C) 2015-2015 xxxxxx公司
+ * All rights reserved.
+ * -----------------------------------------------
+ * 2015-10-30 Created
+ */
+package com.navigate.treat.rest.service;
+
+import com.navigate.treat.base.service.single.IBaseService;
+import com.navigate.treat.rest.domain.Users;
+import com.navigate.treat.rest.domain.UsersQueryHelper;
+import com.navigate.treat.rest.viewmodel.UserLoginReq;
+import com.navigate.treat.rest.viewmodel.UserLoginRes;
+import com.navigate.treat.rest.viewmodel.UserRegisterReq;
+import com.navigate.treat.rest.viewmodel.UserRegisterRes;
+
+public interface IUsersService extends IBaseService<Users, UsersQueryHelper> {
+	/**
+	 * 用户注册
+	 * @param user
+	 * @return
+	 */
+	UserRegisterRes doRegister(Users user);
+	/**
+	 * 用户登录
+	 * @param user
+	 * @return
+	 */
+	UserLoginRes doLogin(UserLoginReq user);
+	/**
+	 * 验证码校对
+	 * @param userloginRes
+	 * @param user
+	 */
+	void checkCaptcha(UserLoginRes userloginRes, UserLoginReq user);
+	/**
+	 * 
+	 * @param l
+	 * @return
+	 */
+	Users selectById(long id);
+    
+}

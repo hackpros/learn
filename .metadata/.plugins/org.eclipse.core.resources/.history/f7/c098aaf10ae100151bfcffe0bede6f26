@@ -1,0 +1,14 @@
+package org.learn.boot;
+@Controller
+public class ConfigController {
+	@Autowired
+	JdbcConfig jdbcConfig;
+	
+
+	@RequestMapping("/test")
+	public @ResponseBody String test(){
+		System.out.println(wiselySettings.getGender()+"---"+wiselySettings.getName());
+		System.out.println(wisely2Settings.getGender()+"==="+wisely2Settings.getGender());
+		return "ok";
+	} 
+}
