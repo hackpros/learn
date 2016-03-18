@@ -37,6 +37,13 @@
 			<version>${spring.boot.version}</version>
 		</dependency>
 
+		<!--Velocity引擎的支持，如果你需要其他的模板引擎，则 -->
+		<!--可以直接引入其他的即可 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-velocity</artifactId>
+			<version>${spring.boot.version}</version>
+		</dependency>
 
 		<!-- spring 相关 -->
 		<dependency>
