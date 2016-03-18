@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">  
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="true">
+	
+	<appender name="A1" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout"> 
+			<param name="ConversionPattern" value="[%d{dd/MM/yy hh:mm:ss:sss z}] %5p %c{2}: %m%n" 
+				/> 
+		</layout>  
+	</appender>  
+	<appender name="A2" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="${user.home}/logs/baseweb.log" /> 
+		<param name="append" value="true" /> 
+
+		<param name="maxFileSize" value="10MB" /> 
+		<param name="maxBackupIndex" value="30" /> 
+		<layout class="org.apache.log4j.PatternLayout"> 
+			<param name="ConversionPattern" value="%d [%t] %-5p %C{6} (%F:%L) - %m%n" />  
+		</layout>  
+	</appender>
+	  
+	<!-- 下面是打印mybatis语句的配置-->  
+	<logger name="com.ibatis" additivity="true"> 
+		<level value="debug" />  
+	</logger>  
+	<logger name="java.sql.Connection" additivity="true"> 
+		<level value="debug" />  
+	</logger>  
+	<logger name="java.sql.Statement" additivity="true"> 
+		<level value="debug" />  
+	</logger>  
+	<logger name="java.sql.PreparedStatement" additivity="true"> 
+		<level value="debug" />  
+	</logger>  
+	<logger name="java.sql.ResultSet" additivity="true"> 
+		<level value="debug" />  
+	</logger> 
+	
+	<logger name="com.rabbit.system.InitializeSystemServlet" additivity="true"> 
+		<level value="info" />  
+	</logger> 
+	
+	<root> 
+		<level value="info" />  
+		<appender-ref ref="A1" /> 
+		<appender-ref ref="A2" /> 
+	</root>  
+	
+</log4j:configuration>  
